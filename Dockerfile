@@ -1,5 +1,6 @@
-FROM node:lts-slim
+FROM node:latest
 WORKDIR /app
+COPY . .
 RUN npm install
-COPY . /app
-CMD ["node","server.js"]
+EXPOSE 3000
+ENTRYPOINT ["node", "server.js"]
